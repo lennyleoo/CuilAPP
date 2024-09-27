@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuil Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <form method="post">
+        <h1>CUIL APP</h1>
+        <div class="card">
+            <select id="opciones" name="opciones">
+                <option value="" disabled selected>Género</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+            <input type="text" name="DNI" class="input" placeholder="Ingresé su DNI">
+            <div>
+                <button type="submit" name="btnContinuar" class="neu-button">Generar CUIL</button>
+                <button type="submit" name="btnLimpiar" class="neu-button">Limpiar</button>
+            </div>
+        </div>
+
+        {% if cuil %}
+        <label class="resultado">Cuil : {{ cuil }}</label>
+        {% endif %}
+        {% if error %}
+        <label class="error">{{ error }}</label>
+        {% endif %}
+
+    </form>
+</body>
+
+</html>
