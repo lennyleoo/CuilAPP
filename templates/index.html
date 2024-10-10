@@ -26,6 +26,13 @@
 
         {% if cuil %}
         <label class="resultado">Cuil : {{ cuil }}</label>
+       
+
+  
+    <a href="{{ url_for('descargar_cuil', cuil=cuil) }}" class="styled-button" >Descargar</a>
+
+  
+</div>
         {% endif %}
         {% if error %}
         <label class="error">{{ error }}</label>
